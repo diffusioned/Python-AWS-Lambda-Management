@@ -80,16 +80,11 @@ There are a few Lambda [limitations](https://docs.aws.amazon.com/lambda/latest/d
 
 **Modules Successfully Tested**
 
-joblib
-
-numpy
-
-pandas
-
-scikit-learn
-
-scipy
-
+joblib\
+numpy\
+pandas\
+scikit-learn\
+scipy\
 
 **Modules Failed**
 
