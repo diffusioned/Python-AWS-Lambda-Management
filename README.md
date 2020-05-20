@@ -51,13 +51,9 @@ This function also produces logs in AWS CloudWatch when run, all information sta
 **Lambda permissions needed in the execution role for this function:**
 
 "lambda:PublishLayerVersion",
-
 "logs:CreateLogGroup",
-
 "logs:CreateLogStream",
-
 "logs:PutLogEvents"
-
 "s3:PutObject" (optional?)
 
 **Limitations**
@@ -84,12 +80,11 @@ joblib\
 numpy\
 pandas\
 scikit-learn\
-scipy\
+scipy
 
 **Modules Failed**
 
-tensorflow (wheel file size for Linux is 500 MB)
-
+tensorflow (wheel file size for Linux is 500 MB)\
 torch [aka PyTorch] (file size 750 MB)
 
 **Updates**
