@@ -50,10 +50,10 @@ This function also produces logs in AWS CloudWatch when run, all information sta
 
 **Lambda permissions needed in the execution role for this function:**
 
-"lambda:PublishLayerVersion",
-"logs:CreateLogGroup",
-"logs:CreateLogStream",
-"logs:PutLogEvents"
+"lambda:PublishLayerVersion",  
+"logs:CreateLogGroup",  
+"logs:CreateLogStream",  
+"logs:PutLogEvents",  
 "s3:PutObject" (optional?)
 
 **Limitations**
