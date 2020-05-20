@@ -3,6 +3,7 @@ I started this directory based off of an [AWS Lambda](https://aws.amazon.com/lam
 
 ## python-add-module-as-layer ##
 **Description**
+
 Recently, I've been doing a lot more technical work in two main areas: Python and AWS Lambda.  One of the newer features introduced in November 2018 for AWS Lambda was [Lambda Layers](https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html).  Lambda layers allow you to add in additional code that you want run from your Lambda function, which can then be reused for other functions, too.  This provides an alternative method to the other main way to add extra code to a Lambda function - adding a [deployment package](https://docs.aws.amazon.com/lambda/latest/dg/python-package.html) which is essentially a zip file of the needed code.  Using a zip file deployment package means you have to add your main Lambda script file (in Python, for example) to the package.  If you want to edit this script file on the fly in the AWS console to make a quick change and re-test, you have to change the script, re-create your zip file, and then upload your zip file to AWs again.  This is a much easier task if you are using Cloud9, as you can use pip inside but that requires launching an additional EC2 instance to run.
 
 A Lambda layer allows you to encapsulate code dependency much like a module in Python.  So, if you are programming in Python in [Visual Studio Code](https://code.visualstudio.com/) on a local Windows machine, for example, and you want to run a function in the mathematical library [NumPy](https://numpy.org/), you would add the statement "import numpy" to be able to use the functions in the numpy code.  This requires the numpy code to be loaded on your machine, though, and the main way to use the Python module [pip](https://pypi.org/project/pip/).  Of course, pip is itself a Python module, and requires its own setup first, but once it is setup on your local machine, you can run "pip install numpy" which will retrieve the appropriate numpy code from the Python module repository [PyPi](https://pypi.org/) and install the numpy module code on your machine, allowing you to import it into your script.  AWS has already added a layer containing both NumPy code as well as the module [SciPy](https://www.scipy.org/) as an existing layer, if you want to test running numpy/scipy code in a Lambda function.  If you add a layer to your function in the console, it will appear in the dropdown list for existing layers.
@@ -50,9 +51,13 @@ This function also produces logs in AWS CloudWatch when run, all information sta
 **Lambda permissions needed in the execution role for this function:**
 
 "lambda:PublishLayerVersion",
+
 "logs:CreateLogGroup",
+
 "logs:CreateLogStream",
+
 "logs:PutLogEvents"
+
 "s3:PutObject" (optional?)
 
 **Limitations**
@@ -76,14 +81,20 @@ There are a few Lambda [limitations](https://docs.aws.amazon.com/lambda/latest/d
 **Modules Successfully Tested**
 
 joblib
+
 numpy
+
 pandas
+
 scikit-learn
+
 scipy
+
 
 **Modules Failed**
 
 tensorflow (wheel file size for Linux is 500 MB)
+
 torch [aka PyTorch] (file size 750 MB)
 
 **Updates**
